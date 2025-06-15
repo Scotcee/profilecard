@@ -9,14 +9,22 @@
   text-align: center;
   font-family: Arial, sans-serif;
 }
-
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .profile-image {
+  max-width: 150px;
   width: 50%;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 16px;
 }
-
+.profile-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 .profile-name {
   font-size: 24px;
   color: #555;
@@ -33,12 +41,31 @@
   padding: 10px 20px;
   background-color: #3b82f6;
   color: white;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  outline: none;
 }
 
 .connect-button:hover {
   background-color: #2563eb;
+}
+.connect-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+@media (max-width: 500px) {
+  .card {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .connect-button {
+    padding: 8px 16px;
+  }
 }
